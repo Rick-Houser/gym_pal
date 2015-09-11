@@ -5,7 +5,7 @@ feature "User creates a workout" do
 		visit root_path
 
 		click_on "Create a workout"
-		fill_in "Title", with: "Monday"
+		fill_in "Title", with: "Tuesday"
 		click_on "Submit"
 
 		expect(page).to have_css ".workouts li", text: "Monday"

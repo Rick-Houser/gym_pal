@@ -218,6 +218,7 @@ DEPENDENCIES
   devise (~> 3.5.2)
   email_validator (~> 1.6.0)
   haml (~> 4.0.7)
+  i18n (~> 0.7.0)
   jbuilder (~> 2.0)
   jquery-rails
   neat (~> 1.7.2)

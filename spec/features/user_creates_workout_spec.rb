@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature "User creates a workout" do 
+feature "User logs in and creates a workout" do 
 	scenario "successfully" do
 		visit root_path
 

@@ -1,5 +1,6 @@
-class ContactsController < ActionController
+class ContactsController < ActionController::Base
 	def new
+		@contact = Contact.new
 	end
 
 	def create

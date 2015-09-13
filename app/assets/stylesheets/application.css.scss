@@ -18,7 +18,17 @@
 
 // Global Styling
 body {
-  margin: 0 0 100px;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+.content-wrapper {
+  margin: 0 auto;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 
 // Nav Bar Styling

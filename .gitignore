@@ -42,3 +42,9 @@ node_modules/
 *.ogv
 *.ogg
 *.webm
+
+# Ignore text files
+*.txt
+*.pdf
+*.doc
+*.rdoc

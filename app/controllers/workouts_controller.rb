@@ -1,4 +1,6 @@
 class WorkoutsController < ApplicationController
+	before_action :authenticate_user!
+	
 	def index
 		@workouts = Workout.all.order("created_at DESC")
 	end

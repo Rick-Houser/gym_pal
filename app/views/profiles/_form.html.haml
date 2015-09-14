@@ -1,16 +1,16 @@
-	= form_for @profile, url: user_profile_path do |form|
-		= form.label :first_name
-		= form.text_field :first_name
+= form_for @profile, url: user_profile_path do |form|
+	= form.label :first_name
+	= form.text_field :first_name
 
-		= form.label :last_name
-		= form.text_field :last_name
+	= form.label :last_name
+	= form.text_field :last_name
 
-		= form.label :job_title
-		= form.select :job_title, ['Beginner','Advanced','Trainer'], {}
+	= form.label :job_title
+	= form.select :job_title, ['Beginner','Advanced','Trainer'], {}
 
-		= form.label :contact_email
-		= form.email_field :contact_email
+	= form.label :contact_email
+	= form.email_field :contact_email
 
-		= form.label :description
-		= form.text_area :description
-		= form.submit "Submit"
+	= form.label :description
+	= form.text_area :description
+	= form.submit "Submit"

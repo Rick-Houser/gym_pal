@@ -1,1 +1,18 @@
-Form for User Profiles
+%div.form-box
+	%h1 Create Your Profile
+	= form_for @profile, url: user_profile_path do |form|
+		= form.label :first_name
+		= form.text_field :first_name
+
+		= form.label :last_name
+		= form.text_field :last_name
+
+		= form.label :job_title
+		= form.select :job_title, ['Beginner','Advanced','Trainer'], {}
+
+		= form.label :contact_email
+		= form.email_field :contact_email
+
+		= form.label :description
+		= form.text_area :description
+		= form.submit "Submit"

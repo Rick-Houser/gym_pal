@@ -3,7 +3,8 @@
 	<head>
 	</head>
 	<body>
-		<p>You have received a message from the Gym Pal's contact form, from <%= "#{@name}, #{@email}." %></p>
+		<p>You have received a message from the Gym Pal's contact form.</p>
+		<p><%= "#{@name}( #{@email}) sent this:" %></p>
 		<p><%= @body %></p>
 	</body>
 </html>

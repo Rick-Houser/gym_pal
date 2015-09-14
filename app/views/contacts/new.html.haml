@@ -1,10 +1,11 @@
-= form_for @contact do |form|
-	= form.label :name
-	= form.text_field :name
+%div.form-box
+	= form_for @contact do |form|
+		= form.label :name
+		= form.text_field :name
 
-	= form.label :email
-	= form.email_field :email
+		= form.label :email
+		= form.email_field :email, autofocus: true
 
-	= form.label :comments
-	= form.text_area :comments
-	= form.submit "Submit"
+		= form.label :comments
+		= form.text_area :comments
+		= form.submit "Submit"

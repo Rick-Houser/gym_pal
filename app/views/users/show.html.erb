@@ -1,7 +1,9 @@
 <%= image_tag @user.profile.avatar.url %>
-<%= @user.profile.first_name %> <%= @user.profile.last_name %><br>
-<%= @user.profile.job_title %><br>
-<% if current_user.plan_id == '2' %>
-	<%= @user.profile.contact_email %><br>
-	<%= @user.profile.description %><br>
+<h1><%= @user.profile.first_name %> <%= @user.profile.last_name %></h1>
+<h3><%= @user.profile.job_title %></h3> 
+<% if current_user.plan_id == 2 %>
+	<h3>About me</h3>
+	<%= @user.profile.description %>
+	<h3>Contact Info</h3>
+	<%= @user.profile.contact_email %>
 <% end %>

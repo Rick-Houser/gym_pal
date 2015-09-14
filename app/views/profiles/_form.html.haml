@@ -1,11 +1,14 @@
-= form_for @profile, url: user_profile_path do |form|
+= form_for @profile, url: user_profile_path, html: { multipart: true } do |form|
 	= form.label :first_name
 	= form.text_field :first_name
 
 	= form.label :last_name
 	= form.text_field :last_name
 
-	= form.label :job_title
+	= form.label :avatar
+	= form.file_field :avatar
+
+	= form.label :title
 	= form.select :job_title, ['Beginner','Advanced','Trainer'], {}
 
 	= form.label :contact_email

@@ -1,0 +1,7 @@
+<%= @user %>
+<%= @user.profile.first_name %> <%= @user.profile.last_name %><br>
+<%= @user.profile.job_title %><br>
+<% if current_user.plan_id == '2' %>
+	<%= @user.profile.contact_email %><br>
+	<%= @user.profile.description %><br>
+<% end %>

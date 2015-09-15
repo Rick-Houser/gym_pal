@@ -9,3 +9,5 @@
 					= link_to user do 
 						= user.profile.first_name
 						= user.profile.last_name
+					-if user.plan_id == 2
+						%span PRO

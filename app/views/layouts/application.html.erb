@@ -48,6 +48,7 @@
   				<% if user_signed_in? %>
   					Logged in as <%= current_user.email %>
             <% if current_user.profile %>
+             <li class="nav-link"><%= link_to "My Account", edit_user_registration_path %></li>         
   					 <li class="nav-link"><%= link_to "Edit profile", edit_user_profile_path(current_user)%></li>
              <li class="nav-link"><%= link_to "View profile", user_path(current_user) %></li>
             <% else %>

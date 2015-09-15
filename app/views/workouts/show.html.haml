@@ -1,5 +1,13 @@
-%p = @workout.title
-%p = @workout.date
-%p = @workout.activity
-%p = @workout.length
-%p = @workout.comments
+%ul
+	%li 
+		= @workout.title
+	%li
+		= @workout.date
+	%li
+		= @workout.activity
+	%li
+		= @workout.length
+	%li
+		= @workout.comments
+	= link_to "Edit", edit_workout_path(@workout)
+	= link_to "Delete", workout_path(@workout), method: :delete, data: { confirm: "Are you sure you want to delete this workout?" }

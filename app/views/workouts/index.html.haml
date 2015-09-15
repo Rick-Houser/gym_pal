@@ -1,8 +1,6 @@
-= link_to "Create a workout", workouts_path
-
+%h3 Currently this is the root for signed in users. It will show all workouts.
 %ul.workouts
 	- @workouts.each do |workout|
 		%li
 			= link_to workout.title, workout
 
-= link_to "Back", root_url

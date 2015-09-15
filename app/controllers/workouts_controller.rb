@@ -25,14 +25,19 @@ class WorkoutsController < ApplicationController
 	end
 
 	def edit
-		@user = User.find( params[:user_id] )
 	end
 
 	def update
-		@user = User.find( params[:user_id] )
+		if @workout.update(workout_params)
+			redirect_to @workout
+		else
+			render 'edit'
+		end
 	end
 
 	def destroy
+		@workout.destroy
+		redirect_to workouts_path
 	end
 
 	private

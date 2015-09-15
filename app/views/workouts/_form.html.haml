@@ -1,0 +1,17 @@
+= form_for @workout, html: { multipart: true } do |form|
+	= form.label :title
+	= form.text_field :title
+
+	= form.label :date
+	= form.date_field :date
+
+	= form.label :activity
+	= form.select :activity, ['Running','Walking','Biking','Core','Upper Body', 'Lower Body', 'Chest', 'Back', 'Legs', 'Arms','Other'], {}
+
+	= form.label :length
+	= form.text_field :length
+
+	= form.label :comments
+	= form.text_area :comments
+
+	= form.submit "Submit"

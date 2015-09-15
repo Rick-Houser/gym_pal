@@ -14,7 +14,7 @@ class ProfilesController < ApplicationController
 			flash[:success] = "Profile updated!"
 			redirect_to user_path( params[:user_id] )
 		else
-			render action: :new
+			render 'new'
 		end
 	end
 
@@ -30,7 +30,7 @@ class ProfilesController < ApplicationController
 			flash[:success] = "Profile Updated!"
 			redirect_to user_path( params[:user_id] )
 		else
-			render action: :edit
+			render 'edit'
 		end
 	end
 

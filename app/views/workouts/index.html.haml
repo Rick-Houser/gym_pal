@@ -1,6 +1,8 @@
-= link_to "Create a workout", new_workout_path
+= link_to "Create a workout", workouts_path
 
 %ul.workouts
 	- @workouts.each do |workout|
 		%li
-			= workout.title
+			= link_to workout.title, workout
+
+= link_to "Back", root_url

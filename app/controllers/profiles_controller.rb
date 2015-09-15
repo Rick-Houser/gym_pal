@@ -3,12 +3,10 @@ class ProfilesController < ApplicationController
 	before_action :only_current_user
 
 	def new
-		@user = User.find( params[:user_id] )
 		@profile = Profile.new
 	end
 
 	def create
-		@user = User.find( params[:user_id] )
 		@profile = @user.build_profile(profile_params)
 		if @profile.save
 			flash[:success] = "Profile updated!"
@@ -19,12 +17,10 @@ class ProfilesController < ApplicationController
 	end
 
 	def edit
-		@user = User.find( params[:user_id] )
 		@profile = @user.profile
 	end
 
 	def update
-		@user = User.find( params[:user_id] )
 		@profile = @user.profile
 		if @profile.update_attributes(profile_params)
 			flash[:success] = "Profile Updated!"

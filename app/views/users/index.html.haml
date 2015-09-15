@@ -1,0 +1,11 @@
+%ul
+	- @users.each do |user|
+		-if user.profile
+			%li
+				-if user.profile.avatar
+					= link_to user do 
+						= image_tag user.profile.avatar.url(:thumb), class: 'user-index-avatar'
+				%h2 
+					= link_to user do 
+						= user.profile.first_name
+						= user.profile.last_name

@@ -1,4 +1,4 @@
-<%= image_tag @user.profile.avatar.url %>
+<%= image_tag @user.profile.avatar.url, class: "user-show-avatar" %>
 <h1><%= @user.profile.first_name %> <%= @user.profile.last_name %></h1>
 <h3><%= @user.profile.job_title %></h3> 
 <% if current_user.plan_id == 2 %>

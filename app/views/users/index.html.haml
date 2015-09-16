@@ -1,13 +1,17 @@
-%ul
+%section
+	%h1.center-text Our Community
 	- @users.each do |user|
 		-if user.profile
-			%li
-				-if user.profile.avatar
-					= link_to user do 
-						= image_tag user.profile.avatar.url(:thumb), class: 'user-index-avatar'
-				%h2 
-					= link_to user do 
-						= user.profile.first_name
-						= user.profile.last_name
-					-if user.plan_id == 2
-						%span PRO
+			-if user.profile.avatar			
+				%div.comment
+					%div.comment-image
+						= link_to user do 
+							= image_tag user.profile.avatar.url(:thumb), class: 'user-index-avatar'
+					%div.comment-content
+						= link_to user do 
+							%h1
+								= user.profile.first_name
+								= user.profile.last_name
+						-if user.plan_id == 2
+							%span PRO
+				%div.border-bottom

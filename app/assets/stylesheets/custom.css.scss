@@ -7,6 +7,12 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+.center-text {
+  text-align: center;
+  margin-bottom: 50px;
+  border: 1px solid #E7F1EC;
+}
+
 $base-spacing: 1.5em !default;
 $alert-color: #fff6bf !default;
 $error-color: #fbe3e4 !default;
@@ -820,11 +826,11 @@ hr {
   border-top: none;
   margin: 1.5em 0; }
 
-img,
-picture {
-  margin: 0;
-  max-width: 100%; }
-
+// img,
+// picture {
+//   margin: 0;
+//   max-width: 100%; }
+/////////////////////////////////////////////////////////////////////////////////////////
 blockquote {
   border-left: 2px solid #DDD;
   color: #595959;
@@ -1373,3 +1379,80 @@ body {
   margin-top: 175px;
   margin-bottom: 150px;
 }
+
+
+/////COMMUNITY ///////////////////////////////////////////////////////////
+
+.comment {
+  $base-border-radius: 3px !default;
+  $base-spacing: 1.5em !default;
+  $action-color: #477DCA !default;
+  $dark-gray: #333 !default;
+  $base-font-color: $dark-gray !default;
+  $comment-gutter: 1.4em;
+  $comment-image-padding: 0.7em;
+  $comment-image-width: 4em;
+  $comment-color: $base-font-color;
+  $comment-background: lighten($action-color, 15%);
+  $comment-detail-color: transparentize($comment-color, 0.5);
+  $comment-image-vert-alignment: top;
+
+  border-bottom: 1px solid transparentize($comment-color, 0.9);
+  display: table;
+  margin-top: $base-spacing;
+  padding-top: 1em;
+  margin-bottom: $base-spacing;
+  padding-bottom: 1em;
+  width: 50%;
+  margin: auto;
+
+  .border-bottom {
+    border-bottom: 1px solid transparentize($comment-color, 0.9);
+  }
+
+  .comment-image,
+  .comment-content {
+    display: table-cell;
+    vertical-align: $comment-image-vert-alignment;
+  }
+
+  .comment-image {
+    padding-right: $comment-gutter;
+
+    > image_tag {
+      background: $comment-background;
+      border-radius: $base-border-radius;
+      display: block;
+      height: auto;
+      padding: $comment-image-padding;
+      width: $comment-image-width;
+    }
+
+    .comment-reverse-order & {
+      padding-right: 0;
+      padding-left: 10px;
+    }
+  }
+
+  .comment-content {
+    width: 100%;
+
+    h1 {
+      font-size: 1em;
+      margin: 0 0 0.5em 0;
+    }
+
+    p {
+      line-height: 1.5em;
+      margin-bottom: 0.5em;
+    }
+
+    p.comment-detail {
+      color: $comment-detail-color;
+      font-size: 0.9em;
+      font-style: italic;
+    }
+  }
+}
+
+

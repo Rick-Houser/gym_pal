@@ -1,0 +1,10 @@
+%section.border-box
+	%h1.title
+		Workout Log
+	%ul.workouts.center-text
+		- @workouts.each do |workout|
+			%li
+				= link_to workout.title, workout
+			%li.border-bottom
+				= link_to workout.date, workout
+	  

@@ -1,0 +1,17 @@
+%section.border-box
+	%h1.title My Profile
+	%div.comment
+		%div.comment-image
+			= image_tag @user.profile.avatar.url, class: "user-show-avatar"
+		%div.comment-content
+			%h2
+				= @user.profile.first_name 
+				= @user.profile.last_name
+			%p 
+				= @user.profile.job_title 
+	%div.comment
+		- if current_user.plan_id == 2 
+			%h4 About me
+			= @user.profile.description
+			%h4 Contact Info
+			= @user.profile.contact_email

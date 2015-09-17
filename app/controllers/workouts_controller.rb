@@ -18,7 +18,7 @@ class WorkoutsController < ApplicationController
 
 		if @workout.save
 			flash[:success] = "Profile updated!"
-			redirect_to @workout
+			redirect_to workouts_path
 		else
 			render 'new'
 		end
@@ -29,7 +29,7 @@ class WorkoutsController < ApplicationController
 
 	def update
 		if @workout.update(workout_params)
-			redirect_to @workout
+			redirect_to workouts_path
 		else
 			render 'edit'
 		end

@@ -1,5 +1,5 @@
-%section
-	%h1.center-text Our Community
+%section.border-box
+	%h1.title Our Community
 	- @users.each do |user|
 		-if user.profile
 			-if user.profile.avatar			
@@ -12,6 +12,9 @@
 							%h1
 								= user.profile.first_name
 								= user.profile.last_name
-						-if user.plan_id == 2
-							%span PRO
+								-if user.plan_id == 2
+									%span.pro
+										%em PRO
+							%p
+								= user.profile.description
 				%div.border-bottom

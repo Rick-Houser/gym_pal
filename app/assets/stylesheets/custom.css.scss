@@ -14,6 +14,151 @@ body {
   }
 }
 
+// Font Styles
+
+
+
+// SCROLL ON PAGE //////////////////////////////////////////////////////////
+ 
+.scroll-on-page {
+  $base-line-height: 1.5em !default;
+  $base-spacing: 1.5em !default;
+  $action-color: #477DCA !default;
+  $dark-gray: #333 !default;
+  $large-screen: em(860) !default;
+  $base-font-color: $dark-gray !default;
+
+  display: inline-block;
+
+  a {
+    color: $action-color;
+    text-decoration: none;
+  }
+
+  aside {
+    @include media($large-screen) {
+      @include span-columns(4);
+    }
+  }
+
+  .scroll-on-page-link {
+    border-bottom: 1px solid transparentize($action-color, 0.8);
+    display: block;
+    margin-right: $base-spacing;
+    outline: none;
+    padding: ($base-spacing / 2) 0;
+
+    &:last-child {
+      margin-bottom: $base-spacing;
+    }
+  }
+
+  article {
+    h4 {
+      margin: 0 0 0.5em 0;
+    }
+
+    p {
+      color: $base-font-color;
+      line-height: $base-line-height;
+    }
+
+    section p:last-of-type {
+      margin-bottom: 2em; 
+    }
+
+    @include media($large-screen) {
+      @include span-columns(8);
+    }
+  }
+}
+
+// Based on code by http://codepen.io/xmark/
+
+
+//Side Panel
+
+.sliding-panel-content {  
+  $action-color: #477DCA !default;
+  $dark-gray: #333 !default;
+  $sliding-panel-border-color: $dark-gray;
+  $sliding-panel-background: lighten($sliding-panel-border-color, 5%);
+  $sliding-panel-color: #fff;
+  $sliding-panel-border: 1px solid $sliding-panel-border-color;
+  $sliding-panel-background-hover: $action-color;
+  $sliding-panel-color-hover: #fff;
+  $sliding-panel-background-focus: lighten($sliding-panel-background, 5%);
+
+  @include position(fixed, 0px auto 0px 0px);
+  @include size(220px 100%);
+  @include transform(translateX(-220px));
+  @include transition(all 0.25s linear);
+  background: $sliding-panel-background;
+  z-index: 999999;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+
+  ul {
+    padding: 0;
+    margin: 0;
+  }
+
+  li {
+    list-style: none;
+  }
+
+  li a {
+    border-bottom: $sliding-panel-border;
+    color: $sliding-panel-color;
+    display: block;
+    font-weight: bold;
+    padding: 1em;
+    text-decoration: none;
+
+    &:focus {
+      background-color: $sliding-panel-background-focus;
+    }
+
+    &:hover {
+      background-color: $sliding-panel-background-hover;
+      color: $sliding-panel-color-hover;
+    }
+  }
+
+  &.is-visible {
+    @include transform(translateX(0));
+  }
+}
+
+.sliding-panel-fade-screen {
+  @include position(fixed, 0px 0px 0px 0px);
+  @include transition;
+  background: black;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 999998;
+
+  &.is-visible {
+    opacity: 0.4;
+    visibility: visible;
+  }
+}
+
+.sliding-panel-button {
+  padding: 10px 16px;
+  display: inline-block;
+  cursor: pointer;
+  position: relative;
+  outline: none;
+
+  img {
+    height: 1.3em;
+  }
+}
+
+// Based on code by Diego Eis
+
+
 .title {
   border-radius: 5px;
   background-color: #E7F1EC;

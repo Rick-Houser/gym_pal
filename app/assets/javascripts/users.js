@@ -1,3 +1,4 @@
+/// STRIPE JS
 $(document).ready(function(){
   Stripe.setPublishableKey($('meta[name="stripe-key"]').attr('content'));
   //Watch for a form submission:

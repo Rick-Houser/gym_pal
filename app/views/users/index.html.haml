@@ -13,7 +13,7 @@
 								= user.profile.first_name
 								= user.profile.last_name
 								-if user.plan_id == 2
-									%span.pro
+									%span.badge-error
 										%em PRO
 							%p
 								= user.profile.description

@@ -1,10 +1,8 @@
-<input type="checkbox" id="sidebartoggler" name="" value=""></input>    
-<div class="wrapper">  
-    <label for="sidebartoggler" class="nav-toggle">☰</label>
+
 <div class="page-content">    
   <section>
     <div id="js-parallax-window" class="parallax-window">
-		  <div class="hero">
+  	  <div class="hero">
         <div class="parallax-static-content"></div>
           <div id="js-parallax-background" class="parallax-background">
       			<div class="hero-inner">
@@ -17,7 +15,7 @@
       			</div>
         </div>
       </div>
-		</div>
+  	</div>
   </section>
   <section>
     <div class="intro-text">
@@ -26,48 +24,35 @@
       <p>Lorem ipsum dolor sit amet, consectetur consectetur adipisicing elit. Perferendis para mitis eun non ullam atque debitis, illo adipisicing elit. Perferendis para mitis eun non ullam atque debitis, illo. Amet, consectetur adipisicing. <a href="javascript:void(0)">Read more <span>&#187;</span></a></p>
     </div>
   </section>
-    <!--end hero-->
   <section>
     <div class="cards">
-		  <div class="card">
-		    <div class="card-image">
-          <%= link_to image_tag ("bridge-run.jpeg") %>
-		    </div>
-		    <div class="card-header">
-		      Join for Free
-		    </div>
-		    <div class="card-copy">
-		      <p>With our free membership, you'll gain access to our database of nutritional recipes, detailed exercises, and your very own workout log. The road to a healthier future is before you. Start today!</p>
+  	  <div class="card">
+  	    <div class="card-image">
+          <%= image_tag ("bridge-run.jpeg") %>
+  	    </div>
+  	    <div class="card-header">
+  	      Join for Free
+  	    </div>
+  	    <div class="card-copy">
+  	      <p>With our free membership, you'll gain access to our database of nutritional recipes, detailed exercises, and your very own workout log. The road to a healthier future is before you. Start today!</p>
           <%= link_to "Sign Up", new_user_registration_path(plan: @basic_plan.id) %>
-		    </div>
-		  </div>
-		  <div class="card">
-		    <div class="card-image">
-          <%= link_to image_tag ("social-gym.jpeg") %>
-		    </div>
-		    <div class="card-header">
-		      Become a PRO
-		    </div>
-		    <div class="card-copy">
-		      <p>In addition to the features of the free account, our Pro members will gain access to our online community of fitness coaches and other gym buddies. Not only will you be able to view our coaches workouts and recipe plans, you'll also be able to communicate with others and coordinate your very own workouts.</p>
+  	    </div>
+  	  </div>
+  	  <div class="card">
+  	    <div class="card-image">
+          <%= image_tag ("social-gym.jpeg") %>
+  	    </div>
+  	    <div class="card-header">
+  	      Become a PRO
+  	    </div>
+  	    <div class="card-copy">
+  	      <p>In addition to the features of the free account, our Pro members will gain access to our online community of fitness coaches and other gym buddies. Not only will you be able to view our coaches workouts and recipe plans, you'll also be able to communicate with others and coordinate your very own workouts.</p>
           <%= link_to "Sign up for Pro", new_user_registration_path(plan: @pro_plan.id) %>
-		    </div>
-		  </div>
-    </section>
-		</div>
-</div>
-    <aside class="sidebar">
-        <nav class="main-nav">
-            <ul class="nav">
-                <li>Home</li>
-                <li>Sounds</li>
-                <li>Shows</li>
-                <li>Bio</li>
-                <li>Gallery</li>
-            </ul>
-        </nav>
-    </aside>    
-</div>    
+  	    </div>
+  	  </div>
+    </div>
+  </section>
+</div> 
     
 </body>
 </html>

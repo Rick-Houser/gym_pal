@@ -337,6 +337,14 @@ $success-color: #e6efc2 !default;
 
 // Uncomment this for a sticky footer.
 
+.footer-container {
+  margin-left: auto;
+  max-width: 68em;
+  margin-right: auto;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
 .container {
   // min-height: 100%;
   height: auto !important;
@@ -1067,9 +1075,7 @@ body {
   $hero-background-bottom: #20392B;
   $hero-color: white;
   $gradient-angle: 10deg;
-  // $hero-image: 'hiking.jpeg';
 
-  // @include background(url(asset-path($hero-image)), linear-gradient($gradient-angle, $hero-background-bottom, $hero-background-top), no-repeat $hero-background-top scroll);
   background-color: #324766;
   background-position: top;
   background-repeat: no-repeat;
@@ -1546,5 +1552,45 @@ $parallax-background-height: $parallax-window-height * 1;
 
 
 // Based on http://codepen.io/skeurentjes/
+
+
+//// Community Index //////////////////////////
+
+$badge-font-size: 0.75em !default;
+$medium-gray: #999 !default;
+$alert-color: #fff6bf !default;
+$error-color: #fbe3e4 !default;
+$notice-color: #e5edf8 !default;
+$success-color: #e6efc2 !default;
+
+@mixin badge($color: $medium-gray) {
+  background-color: $color;
+  border-radius: $badge-font-size * 5;
+  color: darken($color, 60%);
+  display: inline-block;
+  font-size: $badge-font-size;
+  line-height: 1;
+  padding: 0.4em 1.2em;
+}
+
+.badge {
+  @include badge;
+}
+
+.badge-alert {
+  @include badge($alert-color);
+}
+
+.badge-error {
+  @include badge($error-color);
+}
+
+.badge-notice {
+  @include badge($notice-color);
+}
+
+.badge-success {
+  @include badge($success-color);
+}
 
 

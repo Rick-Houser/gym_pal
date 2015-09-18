@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 ruby '2.2.3'
 
 gem 'autoprefixer-rails', '~> 6.0.2'
+gem 'aws-sdk'
 gem 'bitters', '~> 1.1.0'
 gem 'bourbon', '~> 4.2.4'
 gem 'coffee-rails', '~> 4.1.0'

@@ -48,8 +48,12 @@ node_modules/
 *.pdf
 *.doc
 *.rdoc
+
 # Ignore application configuration
 /config/application.yml
 
-#Ignore Amazon .yml
+# Ignore secrets.yml
+/config/secrets.yml
+
+#Ignore Amazon S3
 /config/aws.yml

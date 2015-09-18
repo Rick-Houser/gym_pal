@@ -50,3 +50,6 @@ node_modules/
 *.rdoc
 # Ignore application configuration
 /config/application.yml
+
+#Ignore Amazon .yml
+/config/aws.yml

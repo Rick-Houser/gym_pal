@@ -41,4 +41,11 @@ Rails.application.configure do
   
   # Required by Devise
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  config.paperclip_defaults = {
+    :storage => :s3,
+    :s3_credentials => {
+      :bucket => 'web-folio',
+      :s3_credentials => "#{Rails.root}/config/aws.yml",
+    }
+  }
 end

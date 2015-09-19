@@ -180,9 +180,13 @@ $success-color: #e6efc2 !default;
   background-color: $color;
   color: darken($color, 60%);
   display: block;
+  margin: auto;
+  margin-top: $base-spacing / 2;
   margin-bottom: $base-spacing / 2;
   padding: $base-spacing / 2;
   text-align: center;
+  border-radius: 5px;
+  width: 68em;
 
   a {
     color: darken($color, 70%);
@@ -205,7 +209,6 @@ $success-color: #e6efc2 !default;
 
 .flash-notice {
   @include flash($notice-color);
-  border-radius: 5px;
 }
 
 .flash-success {
@@ -235,7 +238,6 @@ $success-color: #e6efc2 !default;
   min-height: $centered-navigation-height;
   width: 100%;
   z-index: 9999;
-  margin-bottom: 2.5em;
 
   // Mobile view
 
@@ -480,8 +482,6 @@ $success-color: #e6efc2 !default;
 
 // Footer Styles
 
-// Uncomment this for a sticky footer.
-
 .footer-container {
   margin-left: auto;
   max-width: 68em;
@@ -490,12 +490,18 @@ $success-color: #e6efc2 !default;
   padding-right: 1em;
 }
 
+
 .container {
-  // min-height: 100%;
   height: auto !important;
   height: 100%;
-  margin: auto;
-  max-width: 68em;
+  position: relative;
+  margin: 0 auto -4em;
+  min-height: 100%;
+  margin-bottom: -80px;
+}
+
+* {
+  margin: 0;
 }
 
 html, body {
@@ -505,6 +511,19 @@ html, body {
 .container:after {
   content: "";
   display: block;
+}
+
+.footer-2, .container:after {
+  $large-screen: em(860) !default;
+  // height: 17em;
+
+  @include media($large-screen) {
+    // height: 4em;
+  }
+}
+
+.footer-2, .container:after {
+  // height: 80px;
 }
 
 .footer-2 {
@@ -521,7 +540,8 @@ html, body {
   padding: $base-spacing;
   width: 100%;
   display: inline-block;
-  margin-top: 2.5em;
+  position: relative;
+  bottom: 0;
 
   .footer-logo {
     margin-right: 1em;
@@ -933,6 +953,7 @@ input[type="submit"] {
     opacity: 0.5; }
 
 body {
+  height: 100%;
   -webkit-font-smoothing: antialiased;
   background-color: #F8F8F8;
   color: #333;
@@ -1342,6 +1363,7 @@ body {
         background-size: cover;
         border-right: 1px solid rgba(41, 17, 82, 0.2); } }
   .side-image .content {
+    text-align: center;
     display: table-cell;
     width: 100%;
     padding: 1em 1em 4em 1em; }
@@ -1349,9 +1371,9 @@ body {
       .side-image .content {
         display: table-cell;
         width: 66.66667%;
-        padding: 4em 4em 8em 4em; } }
-  .side-image .content h1 {
-    margin-bottom: .9em; }
+        padding: 3em; } }
+  .side-image .content h3 {
+    margin-bottom: .3em; }
   .side-image .content h4 {
     background: #BBB;
     color: white;
@@ -1363,7 +1385,13 @@ body {
     text-transform: uppercase; }
   .side-image .content p {
     color: gray;
-    margin-bottom: 3em; }
+    margin-bottom: 3em;
+    font-size: 20px;
+    line-height: 1.35;
+    font-weight: 200;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px; }
 
 .grid-items-lines {
   position: relative; }
@@ -1548,7 +1576,9 @@ body {
   background-color: #FFFFFF;
   border: 1px solid #E7F1EC;
   border-radius: 5px;
-  min-height: 70%;
+  min-height: 55%;
+  margin-top: 85px;
+  margin-bottom: 85px;
   li {
     font-size: 1.25em;
   }
@@ -1738,4 +1768,59 @@ $success-color: #e6efc2 !default;
   @include badge($success-color);
 }
 
+.inline {
+  display: inline-block;
+}
 
+.float-right {
+  float: right
+}
+
+.form-inputs {
+  margin-bottom: 1em;
+}
+
+.content-wrapper {
+  max-width: 68em;
+  margin: auto;
+  margin-top: 2.5em;
+  margin-bottom: 2.5em;
+}
+
+.form {
+  h1, p {
+    margin: auto;
+    text-align: center;
+  }
+  p {
+    text-align: center;
+    margin-top: 2.5em;
+    margin-bottom: 2.5em;
+    width: 60%;
+  }
+}
+
+// Border-box Sizing
+
+.login {
+  height: 70%;
+}
+
+.basic {
+  height: 95%;
+}
+
+.pro {
+  height: 950px;
+}
+
+.contact {
+  height: 75%;
+}
+
+/// Form select styling
+
+select {
+  display: inline-flex;
+  margin-right: 1.5em;
+}

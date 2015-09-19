@@ -1,0 +1,8 @@
+production:
+  access_key_id: AKIAIORIO4DWTN23DAFA
+  secret_access_key: 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
+  bucket: 'web-folio'
+development:
+  access_key_id: AKIAIORIO4DWTN23DAFA
+  secret_access_key: 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
+  bucket: 'web-folio'

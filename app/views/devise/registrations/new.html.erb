@@ -1,15 +1,21 @@
 <% if params[:plan] == '2' %>
-	<h1>Pro Account</h1>
-	<p>
-		With our free membership, you'll gain access to our database of nutritional recipes, detailed exercises, and your very own workout log. 
-	</p>
-	<%= render "pro_form" %>
+	<section class="border-box pro">
+		<div class="form">
+			<h1 class="title">Pro Membership</h1>
+			<p>
+				In addition to the features of the free account, our Pro members will gain access to our online community of fitness coaches and other gym buddies. Not only will you be able to view our coaches workouts and recipe plans , you'll also be able to communicate with others and coordinate your very own workouts.
+			</p>
+				<%= render "pro_form" %>
+		</div>
+	</section>
 <% else %>
-	<h1>Basic Account</h1>
-	<p>
-		In addition to the features of the free account, our Pro members will gain access to our online community of fitness coaches and other gym buddies. Not only will you be able to view our coaches workouts and recipe plans , you'll also be able to communicate with others and coordinate your very own workouts.
-	</p>
-	<%= render "basic_form" %>
+	<section class="border-box basic">
+		<div class="form">
+			<h1 class="title">Basic Membership</h1>
+			<p>
+				With our free membership, you'll gain access to our database of nutritional recipes, detailed exercises, and your very own workout log.<br>Join us today to see what we are all about! 
+			</p>
+				<%= render "basic_form" %>
+		</div>
+	</section>
 <% end %>
-
-<%= render "devise/shared/links" %>

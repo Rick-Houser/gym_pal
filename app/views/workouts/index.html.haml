@@ -2,6 +2,7 @@
 	%h1.title
 		Workout Log
 	%ul.workouts.center-text
+		= link_to "Create a Workout!", new_workout_path, class: "badge-error"
 		- @workouts.each do |workout|
 			%li
 				= link_to workout.title, workout

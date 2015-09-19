@@ -1577,8 +1577,8 @@ body {
   border: 1px solid #E7F1EC;
   border-radius: 5px;
   min-height: 55%;
-  margin-top: 85px;
-  margin-bottom: 85px;
+  margin-top: 55px;
+  margin-bottom: 55px;
   li {
     font-size: 1.25em;
   }
@@ -1803,20 +1803,33 @@ $success-color: #e6efc2 !default;
 // Border-box Sizing
 
 .login {
-  height: 70%;
+  min-height: 70%;
 }
 
-.basic {
-  height: 95%;
+.basic,.account {
+  min-height: 95%;
 }
 
 .pro {
-  height: 950px;
+  min-height: 950px;
 }
 
 .contact {
-  height: 75%;
+  min-height: 75%;
 }
+
+.profile {
+  min-height: 725px;
+}
+
+.workout {
+  min-height: 100%;
+}
+
+.log, .forgot {
+  min-height: 65%;
+}
+
 
 /// Form select styling
 

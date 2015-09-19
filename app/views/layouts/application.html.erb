@@ -1,91 +1,95 @@
 <!D­OCTYPE html>
-<html>
-<head>
-	<title>GymPal</title>
-	<%= stylesheet_link_tag 'application', media: 'all' %>
-  <%= javascript_include_tag 'https://js.stripe.com/v2/', type: 'text/javascript' %>
-  <%= javascript_include_tag 'http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js', type: 'text/javascript' %>
-	<%= javascript_include_tag 'application' %>
-  <%= tag :meta, name: "stripe-key", content: STRIPE_PUBLIC_KEY %>
-	<%= csrf_meta_tags %>
+<div class="container">
+  <html>
+  <head>
+  	<title>GymPal</title>
+  	<%= stylesheet_link_tag 'application', media: 'all' %>
+    <%= javascript_include_tag 'https://js.stripe.com/v2/', type: 'text/javascript' %>
+    <%= javascript_include_tag 'http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js', type: 'text/javascript' %>
+  	<%= javascript_include_tag 'application' %>
+    <%= tag :meta, name: "stripe-key", content: STRIPE_PUBLIC_KEY %>
+  	<%= csrf_meta_tags %>
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <link rel="stylesheet" href="CSS/main.css">
-</head>
-<body>
-  <header class="centered-navigation" role="banner">
-    <div class="centered-navigation-wrapper">
-      <a href="javascript:void(0)" class="mobile-logo">
-        <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_3_dark.png" alt="Logo image">
-      </a>
-      <a href="javascript:void(0)" id="js-centered-navigation-mobile-menu" class="centered-navigation-mobile-menu">MENU</a>
-      <nav role="navigation">
-        <ul id="js-centered-navigation-menu" class="centered-navigation-menu show">
-        	<li class="nav-link"><%= link_to "Home", root_path %></li>
-          <li class="nav-link"><%= link_to "About Us", about_path %></li>
-          <li class="nav-link"><%= link_to "Contact", new_contact_path %></li>  
-          <li class="nav-link more"><a href="javascript:void(0)">More</a>
-            <ul class="submenu">
-              <li><%= link_to "My Account", edit_user_registration_path %></li>
-              <li><%= link_to "Our community", users_path %></li>
-              <li class="more"><a href="javascript:void(0)">Workouts</a>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  </head>
+  <body>
+    <div class="#">
+      <header class="centered-navigation" role="banner">
+        <div class="centered-navigation-wrapper">
+          <a href="javascript:void(0)" class="mobile-logo">
+            <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_3_dark.png" alt="Logo image">
+          </a>
+          <a href="javascript:void(0)" id="js-centered-navigation-mobile-menu" class="centered-navigation-mobile-menu">MENU</a>
+          <nav role="navigation">
+            <ul id="js-centered-navigation-menu" class="centered-navigation-menu show">
+            	<li class="nav-link"><%= link_to "Home", root_path %></li>
+              <li class="nav-link"><%= link_to "About Us", about_path %></li>
+              <li class="nav-link"><%= link_to "Contact", new_contact_path %></li>  
+              <li class="nav-link more"><a href="javascript:void(0)">More</a>
                 <ul class="submenu">
-                  <li><%= link_to "Create Workout", new_workout_path %></li>
-                  <li><%= link_to "Workout Log", workouts_path %></li>       
+                  <li><%= link_to "My Account", edit_user_registration_path %></li>
+                  <li><%= link_to "Our community", users_path %></li>
+                  <li class="more"><a href="javascript:void(0)">Workouts</a>
+                    <ul class="submenu">
+                      <li><%= link_to "Create Workout", new_workout_path %></li>
+                      <li><%= link_to "Workout Log", workouts_path %></li>       
+                    </ul>
+                  </li>
                 </ul>
               </li>
+      				<% if user_signed_in? %>
+                <% if current_user.profile %>         
+      					 <li class="nav-link"><%= link_to "Edit profile", edit_user_profile_path(current_user)%></li>
+                 <li class="nav-link"><%= link_to "View profile", user_path(current_user) %></li>
+                <% else %>
+                 <li class="nav-link"><%= link_to "Create profile", new_user_profile_path(current_user)%></li>
+                <% end %>
+      					<li class="nav-link"><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
+      				<% else %>
+      					<li class="nav-link"><%= link_to "Log In", new_user_session_path %></li>
+      				<% end %>
             </ul>
-          </li>
-  				<% if user_signed_in? %>
-            <% if current_user.profile %>         
-  					 <li class="nav-link"><%= link_to "Edit profile", edit_user_profile_path(current_user)%></li>
-             <li class="nav-link"><%= link_to "View profile", user_path(current_user) %></li>
-            <% else %>
-             <li class="nav-link"><%= link_to "Create profile", new_user_profile_path(current_user)%></li>
-            <% end %>
-  					<li class="nav-link"><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
-  				<% else %>
-  					<li class="nav-link"><%= link_to "Log In", new_user_session_path %></li>
-  				<% end %>
-        </ul>
-      </nav>
-    </div>
-  </header>
+          </nav>
+        </div>
+      </header>
 
-  <div class="container">
-    <% flash.each do |key, value| %>
-      <%= content_tag :div, value, class: "flash-#{key}" %>
-    <% end %>
+      <% flash.each do |key, value| %>
+        <%= content_tag :div, value, class: "flash-#{key}" %>
+      <% end %>
 
-    <%= yield %>
-  </div>
-  <footer class="footer-2" role="contentinfo">
-    <div class="footer-container">
-      <div class="footer-logo">
-        <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_1.png" alt="Logo image">
+      <div class="content-wrapper">
+        <%= yield %>
       </div>
-        <ul>
-          <li><a><small>&copy; <%= Time.now.year %> Rick Houser</small></a></li>
-        </ul>
-      <div class="footer-secondary-links">
-        <ul>
-          <li><a href="javascript:void(0)">Terms and Conditions</a></li>
-          <li><a href="javascript:void(0)">Privacy Policy</a></li>
-        </ul>
 
-        <ul class="footer-social">
-          <li><a href="javascript:void(0)">
-            <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/facebook-logo-circle.png" alt="Facebook">
-            </a></li>
-          <li><a href="javascript:void(0)">
-            <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/twitter-logo-circle.png" alt="Twitter">
-          </a></li>
-          <li><a href="javascript:void(0)">
-            <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/youtube-logo-circle.png" alt="YouTube">
-          </a></li>
-        </ul>
-      </div>
+      <footer class="footer-2" role="contentinfo">
+        <div class="footer-container">
+          <div class="footer-logo">
+            <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_1.png" alt="Logo image">
+          </div>
+            <ul>
+              <li><a><small>&copy; <%= Time.now.year %> Rick Houser</small></a></li>
+            </ul>
+          <div class="footer-secondary-links">
+            <ul>
+              <li><a href="javascript:void(0)">Terms and Conditions</a></li>
+              <li><a href="javascript:void(0)">Privacy Policy</a></li>
+            </ul>
+
+            <ul class="footer-social">
+              <li><a href="javascript:void(0)">
+                <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/facebook-logo-circle.png" alt="Facebook">
+                </a></li>
+              <li><a href="javascript:void(0)">
+                <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/twitter-logo-circle.png" alt="Twitter">
+              </a></li>
+              <li><a href="javascript:void(0)">
+                <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/youtube-logo-circle.png" alt="YouTube">
+              </a></li>
+            </ul>
+          </div>
+        </div>
+      </footer>
     </div>
-  </footer>
-</body>
-</html>
+  </body>
+  </html>
+</div>

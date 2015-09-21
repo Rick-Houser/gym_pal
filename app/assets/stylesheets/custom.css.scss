@@ -1714,7 +1714,7 @@ $parallax-background-height: $parallax-window-height * 1;
 }
 
 .parallax-background {
-  background: url("hiking.jpeg") repeat;
+  background: url("https://s3-us-west-2.amazonaws.com/web-folio/hiking.jpeg") repeat;
   background-position: top;
   background-size: cover;
   background-color: beige;

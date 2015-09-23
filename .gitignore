@@ -57,3 +57,6 @@ node_modules/
 
 #Ignore Amazon S3
 /config/aws.yml
+
+#Ignore newrelic.yml
+/config/newrelic.yml

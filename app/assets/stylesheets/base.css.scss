@@ -1,0 +1,187 @@
+html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+*, *:before, *:after {
+	margin: 0;
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit; }
+
+html, body {
+ height: 100%;
+}
+
+body {
+  background-color: #F8F8F8;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  font-size: 1em;
+  line-height: 1.5; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  line-height: 1.25;
+  margin: 0;
+  text-rendering: optimizeLegibility; }
+
+h1 {
+  font-size: 2.25em; }
+
+h2 {
+  font-size: 2em; }
+
+h3 {
+  font-size: 1.75em; }
+
+h4 {
+  font-size: 1.5em; }
+
+h5 {
+  font-size: 1.25em; }
+
+h6 {
+  font-size: 1em; }
+
+p {
+  margin: 0 0 0.75em; }
+
+a {
+  -webkit-transition: color 0.1s linear;
+  -moz-transition: color 0.1s linear;
+  transition: color 0.1s linear;
+  color: #477DCA;
+  text-decoration: none; }
+  a:hover {
+    color: #2c5999; }
+  a:active, a:focus {
+    color: #2c5999;
+    outline: none; }
+
+hr {
+  border-bottom: 1px solid #DDD;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  margin: 1.5em 0; }
+
+
+.container {
+  height: auto !important;
+  height: 100%;
+  position: relative;
+  margin: 0 auto -4em;
+  min-height: 100%;
+  margin-bottom: -80px;
+}
+
+.container:after {
+  content: "";
+  display: block;
+}
+
+.content-wrapper {
+  max-width: 68em;
+  margin: auto;
+  margin-top: 2.5em;
+  margin-bottom: 2.5em;
+}
+
+.center-text {
+  text-align: center;
+  li {
+    margin-top: 1.5em;
+  }
+} 
+
+.border-box {
+  background-color: #FFFFFF;
+  border: 1px solid #E7F1EC;
+  border-radius: 5px;
+  min-height: 55%;
+  margin-top: 55px;
+  margin-bottom: 55px;
+  li {
+    font-size: 1.25em;
+  }
+  padding-bottom: 3em;
+  .comment > h4 {
+    line-height: 1.5em;
+  }
+}
+
+.title {
+  border-radius: 5px;
+  background-color: #E7F1EC;
+  text-align: center;
+  margin-bottom: 50px;
+  border: 1px solid #E7F1EC;
+  padding-bottom: 1em;
+  font-size: 2.25em;
+  padding-top: 1em;
+}
+
+// Flash styling
+
+.flash-alert {
+  @include flash($alert-color);
+}
+
+.flash-error {
+  @include flash($error-color);
+}
+
+.flash-notice {
+  @include flash($notice-color);
+}
+
+.flash-success {
+  @include flash($success-color);
+}
+
+// Border-box Sizing
+
+.login {
+  min-height: 70%;
+}
+
+.basic,.account {
+  min-height: 95%;
+}
+
+.pro {
+  min-height: 950px;
+}
+
+.contact {
+  min-height: 75%;
+}
+
+.profile {
+  min-height: 725px;
+}
+
+.workout {
+  min-height: 100%;
+}
+
+.log, .forgot {
+  min-height: 65%;
+}
+
+.inline {
+  display: inline-block;
+}
+
+.float-right {
+  float: right
+}

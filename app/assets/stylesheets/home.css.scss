@@ -1,0 +1,198 @@
+.page-content {
+  position: relative;
+  z-index: 0; 
+}
+
+.hero {
+  $base-border-radius: 5px !default;
+  $action-color: #477DCA !default;
+  $large-screen: em(860) !default;
+  $hero-background-top: #7F99BE; 
+  $hero-background-bottom: #20392B;
+  $hero-color: white;
+  $gradient-angle: 10deg;
+
+  background-color: #324766;
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 5px;
+  padding-bottom: 3em;
+  margin: 75px 1em 0 1em;
+
+  .hero-logo img {
+    height: 4em;
+    margin-top: 3em;
+    margin-bottom: 1em;
+  }
+
+  .hero-inner {
+    @include outer-container;
+    @include clearfix;
+    margin: auto;
+    padding: 3.5em;
+    text-align: center;
+
+    .hero-copy {
+      text-align: center;
+      
+      h1 {
+        color: $hero-color;
+        font-size: 1.6em;
+        margin-bottom: 0.5em;
+
+        @include media($large-screen) {
+          font-size: 1.8em;
+        }
+      }
+
+      p {
+        color: $hero-color;
+        line-height: 1.4em;
+        margin: 0 auto 3em auto; 
+
+        @include media($large-screen) {
+          font-size: 1.1em;
+          max-width: 40%;
+        }
+      }
+    }
+  }
+}
+
+// Card Styling
+.cards {
+  @include display(flex);
+  @include flex-wrap(wrap);
+  @include justify-content(space-between);
+  margin-top: 75px;
+}
+
+.card {
+  $base-border-color: gainsboro !default;
+  $base-border-radius: 5px !default;
+  $base-background-color: white !default;
+  $base-spacing: 1.5em !default;
+  $action-color: #477DCA !default;
+  $dark-gray: #333 !default;
+  $base-font-color: $dark-gray !default;
+  $card-border-color: $base-border-color;
+  $card-border: 1px solid $card-border-color;
+  $card-background: lighten($card-border-color, 10%);
+  $card-header-background: $card-background;
+  $card-margin: 1em;
+  $card-image-hover-opacity: 0.7;
+  $card-image-hover-color: #F8F2B4;
+
+  @include flex-basis(15em);
+  @include flex-grow(1);
+  @include transition (all 0.2s ease-in-out);
+  background-color: $card-background;
+  border-radius: $base-border-radius;
+  border: $card-border;
+  box-shadow: 0 2px 4px darken($base-background-color, 10%);
+  cursor: pointer;
+  margin: 0 $card-margin $base-spacing $card-margin;
+  position: relative;
+
+  .card-image {
+    overflow: hidden;
+    height: 150px;
+    max-height: 150px;
+    background-color: $card-image-hover-color;
+
+    img {
+      @include transition (all 0.2s ease-in-out);
+      border-top-left-radius: $base-border-radius;
+      border-top-right-radius: $base-border-radius;
+      width: 100%;
+      opacity: 1;
+    }
+  }
+
+  .card-header {
+    @include transition (all 0.2s ease-in-out);
+    background-color: $card-header-background;
+    border-bottom: $card-border;
+    border-radius: $base-border-radius $base-border-radius 0 0;
+    font-weight: bold;
+    line-height: 1.5em;
+    padding: ($base-spacing / 3) ($base-spacing / 2);
+  }
+
+  .card-copy {
+    font-size: 0.9em;
+    line-height: 1.5em;
+    padding: ($base-spacing / 2) ($base-spacing / 2);
+
+    p {
+      margin: 0 0 ($base-spacing / 2);
+    }
+  }
+
+  &:focus,
+  &:hover {
+    cursor: pointer;
+
+    img {
+      opacity: $card-image-hover-opacity;
+    }
+  }
+
+  &:active {
+    background-color: $card-background;
+
+    .card-header {
+      background-color: $card-background;
+    }
+  }
+}
+
+.intro-text {
+  margin-bottom: 5em;
+  margin-top: 4em;
+  text-align: center; }
+  .intro-text h2 {
+    font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+    font-weight: 800;
+    margin-bottom: .3em; }
+    @media screen and (min-width: 53.75em) {
+      .intro-text h2 {
+        font-size: 3em;
+        margin-bottom: .4em; } }
+  .intro-text h3 {
+    background: #477DCA;
+    color: white;
+    display: inline-block;
+    font-size: .7em;
+    font-weight: 800;
+    margin-bottom: 2em;
+    padding: 3px 8px;
+    text-transform: uppercase; }
+    @media screen and (min-width: 53.75em) {
+      .intro-text h3 {
+        margin-bottom: 3.3em; } }
+  .intro-text h4 {
+    color: #666666;
+    font-size: 1.3em;
+    font-weight: 300;
+    line-height: 1.4em;
+    margin: 0 auto 1em; }
+    @media screen and (min-width: 53.75em) {
+      .intro-text h4 {
+        font-size: 1.7em;
+        line-height: 1.35em;
+        margin: 0 auto 1em;
+        width: 60%; } }
+  .intro-text p {
+    margin: auto; }
+    @media screen and (min-width: 53.75em) {
+      .intro-text p {
+        width: 60%; } }
+    .intro-text p a {
+      font-size: .8em;
+      font-weight: 400;
+      text-transform: uppercase; }
+      .intro-text p a span {
+        font-size: 1.3em;
+        line-height: 0; }

@@ -77,11 +77,10 @@ hr {
 
 .container {
   height: auto !important;
-  height: 100%;
   position: relative;
-  margin: 0 auto -4em;
+  margin: 0 auto;
   min-height: 100%;
-  margin-bottom: -80px;
+  padding-bottom: 80px;
 }
 
 .container:after {
@@ -93,7 +92,6 @@ hr {
   max-width: 68em;
   margin: auto;
   margin-top: 2.5em;
-  margin-bottom: 2.5em;
 }
 
 .center-text {
@@ -154,24 +152,28 @@ hr {
   min-height: 70%;
 }
 
-.basic,.account {
-  min-height: 95%;
+.workout {
+  min-height: 725px;
 }
 
 .pro {
-  min-height: 950px;
+  min-height: 925px;
 }
 
 .contact {
-  min-height: 75%;
+  min-height: 525px;
 }
 
 .profile {
   min-height: 725px;
 }
 
-.workout {
-  min-height: 100%;
+.account {
+  min-height: 625px;
+}
+
+.basic {
+  min-height: 650px;
 }
 
 .log, .forgot {

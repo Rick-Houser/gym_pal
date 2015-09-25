@@ -97,9 +97,11 @@
   background: $footer-background;
   padding: $base-spacing;
   width: 100%;
-  display: inline-block;
-  position: relative;
-  bottom: 0;
+  display: block;
+  min-height: 80px;
+  width: 100%;
+  position: absolute;
+  bottom: 0px;
 
   .footer-logo {
     margin-right: 1em;

@@ -1,0 +1,38 @@
+<header class="centered-navigation" role="banner">
+  <div class="centered-navigation-wrapper">
+    <a href="javascript:void(0)" class="mobile-logo">
+      <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_3_dark.png" alt="Logo image">
+    </a>
+    <a href="javascript:void(0)" id="js-centered-navigation-mobile-menu" class="centered-navigation-mobile-menu">MENU</a>
+    <nav role="navigation">
+      <ul id="js-centered-navigation-menu" class="centered-navigation-menu show">
+      	<li class="nav-link home-link"><%= link_to "Home", root_path %></li>
+        <li class="nav-link"><%= link_to "About Us", about_path %></li>
+        <li class="nav-link"><%= link_to "Contact", new_contact_path %></li>  
+        <li class="nav-link more"><a href="javascript:void(0)">More</a>
+          <ul class="submenu">
+            <li><%= link_to "My Account", edit_user_registration_path %></li>
+            <li><%= link_to "Our community", users_path %></li>
+            <li class="more"><a href="javascript:void(0)">Workouts</a>
+              <ul class="submenu">
+                <li><%= link_to "Create Workout", new_workout_path %></li>
+                <li><%= link_to "Workout Log", workouts_path %></li>       
+              </ul>
+            </li>
+          </ul>
+        </li>
+				<% if user_signed_in? %>
+          <% if current_user.profile %>         
+					 <li class="nav-link"><%= link_to "Edit profile", edit_user_profile_path(current_user)%></li>
+           <li class="nav-link"><%= link_to "View profile", user_path(current_user) %></li>
+          <% else %>
+           <li class="nav-link"><%= link_to "Create profile", new_user_profile_path(current_user)%></li>
+          <% end %>
+					<li class="nav-link"><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
+				<% else %>
+					<li class="nav-link"><%= link_to "Log In", new_user_session_path %></li>
+				<% end %>
+      </ul>
+    </nav>
+  </div>
+</header>

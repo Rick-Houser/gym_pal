@@ -148,11 +148,7 @@ hr {
 
 // Border-box Sizing
 
-.login {
-  min-height: 70%;
-}
-
-.workout {
+.workout, .profile {
   min-height: 725px;
 }
 
@@ -164,10 +160,6 @@ hr {
   min-height: 525px;
 }
 
-.profile {
-  min-height: 725px;
-}
-
 .account {
   min-height: 625px;
 }
@@ -176,8 +168,8 @@ hr {
   min-height: 650px;
 }
 
-.log, .forgot {
-  min-height: 65%;
+.log, .forgot, .login {
+  min-height: 500px;
 }
 
 .inline {

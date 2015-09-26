@@ -262,3 +262,18 @@
     }
   }
 }
+
+.home-link {
+  a {
+    color: #40526B;
+  }
+  font-weight: bold;
+  font-size: 30px;
+  float: left;
+  width: 45px;
+  height: 45px;
+  margin-top: 8px;
+  border: 1px solid #40526B;
+  border-radius: 100%;
+  font-family: serif;
+}

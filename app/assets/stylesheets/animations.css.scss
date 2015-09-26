@@ -9,6 +9,7 @@ $parallax-background-height: $parallax-window-height * 1;
   position: relative;
   text-align: center;
   width: 100%;
+  border-radius: 5px;
 }
 
 .parallax-static-content {
